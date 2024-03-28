@@ -1,0 +1,625 @@
+definitions:
+  controller.LoginInput:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  controller.PasswordUpdateInput:
+    properties:
+      confirm_password:
+        type: string
+      new_password:
+        type: string
+      old_password:
+        type: string
+    required:
+    - confirm_password
+    - new_password
+    - old_password
+    type: object
+  controller.RegisterInput:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    required:
+    - email
+    - password
+    - username
+    type: object
+  controller.categoriesInput:
+    properties:
+      categories_desc:
+        type: string
+      categories_text:
+        type: string
+    type: object
+  controller.commentInput:
+    properties:
+      comment_text:
+        type: string
+      post_id:
+        type: integer
+    type: object
+  controller.postInput:
+    properties:
+      categories_id:
+        type: integer
+      companies:
+        type: string
+      post_text:
+        type: string
+      post_title:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  controller.voteInput:
+    properties:
+      post_id:
+        type: integer
+      userID:
+        type: integer
+      vote_type:
+        type: boolean
+    type: object
+  models.Categories:
+    properties:
+      categories_desc:
+        type: string
+      categories_text:
+        type: string
+      id:
+        type: integer
+    type: object
+  models.Comment:
+    properties:
+      comment_text:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      post_id:
+        type: integer
+      updated_at:
+        type: string
+    type: object
+  models.Post:
+    properties:
+      categories_id:
+        type: integer
+      companies:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: integer
+      post_text:
+        type: string
+      post_title:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  models.Votes:
+    properties:
+      id:
+        type: integer
+      post_id:
+        type: integer
+      user_id:
+        type: integer
+      vote_type:
+        type: boolean
+    type: object
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+paths:
+  /categories:
+    get:
+      description: Get a list of Categories.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Categories'
+            type: array
+      summary: Get all Categories.
+      tags:
+      - Categories
+    post:
+      description: Creating a new Categories.
+      parameters:
+      - description: the body to create a new Categories
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.categoriesInput'
+      - description: 'Authorization. How to input in swagger : ''Bearer <insert_your_token_here>'''
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Categories'
+      security:
+      - BearerToken: []
+      summary: Create New Categories.
+      tags:
+      - Categories
+  /categories/{id}:
+    delete:
+      description: Delete a Categories by id.
+      parameters:
+      - description: categories id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: boolean
+            type: object
+      summary: Delete one Categories.
+      tags:
+      - Categories
+    put:
+      description: Update Categories by id.
+      parameters:
+      - description: 'Authorization. How to input in swagger : ''Bearer <insert_your_token_here>'''
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: categories id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: the body to update category
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.categoriesInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Categories'
+      security:
+      - BearerToken: []
+      summary: Update Categories.
+      tags:
+      - Categories
+  /comment:
+    get:
+      description: Get a list of Comment.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Comment'
+            type: array
+      summary: Get all Comment.
+      tags:
+      - Comment
+    post:
+      description: Creating a new Comment.
+      parameters:
+      - description: the body to create a new comment
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.commentInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Comment'
+      summary: Create New Comment.
+      tags:
+      - Comment
+  /comment/{id}:
+    delete:
+      description: Delete a Comment by id.
+      parameters:
+      - description: Comment id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: boolean
+            type: object
+      summary: Delete one Comment.
+      tags:
+      - Comment
+    put:
+      description: Update Comment by id.
+      parameters:
+      - description: comment id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: the body to update an comment
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.commentInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Comment'
+      summary: Update Comment.
+      tags:
+      - Comment
+  /countvote:
+    get:
+      description: Get a count of Vote.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Votes'
+            type: array
+      summary: Get Count Vote.
+      tags:
+      - Vote
+  /login:
+    post:
+      description: Logging in to get jwt token access
+      parameters:
+      - description: the body to login a user
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.LoginInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Login as user
+      tags:
+      - Auth
+  /loginadmin:
+    post:
+      description: Logging in to get jwt token access
+      parameters:
+      - description: the body to login a admin
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.LoginInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Login as admin
+      tags:
+      - Auth
+  /post:
+    get:
+      description: Get a list of Post.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Post'
+            type: array
+      summary: Get all Post.
+      tags:
+      - Post
+    post:
+      description: Creating a new Post.
+      parameters:
+      - description: the body to create a new Post
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.postInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Post'
+      summary: Create New Post.
+      tags:
+      - Post
+  /post/{id}:
+    delete:
+      description: Delete a Post by id.
+      parameters:
+      - description: post id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: boolean
+            type: object
+      summary: Delete one Post.
+      tags:
+      - Post
+    get:
+      description: Get a Post by text.
+      parameters:
+      - description: post text
+        in: path
+        name: text
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Post'
+      summary: Get Post.
+      tags:
+      - Post
+    put:
+      description: Update Post by id.
+      parameters:
+      - description: post id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: the body to update an Post
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.postInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Post'
+      summary: Update Post.
+      tags:
+      - Post
+  /register:
+    post:
+      description: registering a user from public access.
+      parameters:
+      - description: the body to register a user
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.RegisterInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Register a user.
+      tags:
+      - Auth
+  /registeradmin:
+    post:
+      description: registering an admin from public access.
+      parameters:
+      - description: the body to register a admin
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.RegisterInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Register a admin.
+      tags:
+      - Auth
+  /update-password-admin/{id}:
+    put:
+      description: Update admin's password.
+      parameters:
+      - description: 'Authorization. How to input in swagger : ''Bearer <insert_your_token_here>'''
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: admin id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: the body to update admin's password
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.PasswordUpdateInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerToken: []
+      summary: Update admin password.
+      tags:
+      - Auth
+  /update-password/{id}:
+    put:
+      description: Update user's password.
+      parameters:
+      - description: 'Authorization. How to input in swagger : ''Bearer <insert_your_token_here>'''
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: user id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: the body to update user's password
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.PasswordUpdateInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerToken: []
+      summary: Update user password.
+      tags:
+      - Auth
+  /vote:
+    get:
+      description: Get a list of Vote.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Votes'
+            type: array
+      summary: Get all Vote.
+      tags:
+      - Vote
+    post:
+      description: Creating a new Vote.
+      parameters:
+      - description: the body to create a new vote
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/controller.voteInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Votes'
+      summary: Create New Vote.
+      tags:
+      - Vote
+  /vote/{id}:
+    delete:
+      description: Delete a Vote by id.
+      parameters:
+      - description: Vote id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: boolean
+            type: object
+      summary: Delete one Vote.
+      tags:
+      - Vote
+swagger: "2.0"
