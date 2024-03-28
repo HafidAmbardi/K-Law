@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    height: 85.3rem;
+}
+
+header{
+    width: 100%;
+    height: 7.7rem;
+    background-color: white;
+    position: fixed;
+}
+
+header img{
+    width: 4.6rem;
+    height: 6.1rem;
+    margin: 1.2rem 0.7rem 0.4rem 1.5rem;
+}
+
+header .logo-title{
+    display: flex;
+    flex-direction: row;
+}
+
+header h1{
+    margin-top: 2.3rem;
+    font-family: Livvic;
+    height: 3rem;
+    font-size: 2.4rem;
+}
+
+header hr{
+    border: 0.1rem solid #000;
+    opacity: 12%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #F7F8F9;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+main section{
+    width: 53.9rem;
+    height: 63rem;
+    margin: 3.8rem 0 6rem 0;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0rem 0.1rem 0.4rem rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    position: fixed;
+}
+
+@media only screen and (min-height: 800px) {
+    main section{
+        margin-top: 12.7rem;
+    }
+}
+
+main section h1{
+    font-family: Lato;
+    margin: 4.1rem 0rem 2.5rem 6.6rem;
+    height: 4rem;
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+main section hr{
+    width: 40.7rem;
+    border: 0.1rem solid #000;
+    opacity: 12%;
+    margin : 1.6rem 6.6rem
+}
+
+main form{
+    margin-left: 6.6rem;
+    font-family: Lato;
+    font-size: 1.3rem;
+    font-weight: 350;
+}
+
+main form .form-container{
+    display: flex;
+    flex-direction: column;
+}
+
+main form label{
+    margin-bottom: 0.2rem;
+}
+
+main form input{
+    margin: 0.3rem 0 1.2rem 0;
+    width: 35.9rem;
+    height: 4.7rem;
+    border-radius: 1rem;
+    border-style: none;
+    background-color: #EAEDEF;
+    padding : 0 2.4rem 0 2.4rem;
+    font-family: Lato;
+}
+
+main form .login-addition{
+    display: flex;
+    justify-content: space-between;
+    width: 40.7rem;
+}
+
+main .login-addition a{
+    text-decoration: none;
+    color: #1661C3;
+}
+
+main .login-button{
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 26.2rem;
+    width: 40.7rem;
+    height: 4.8rem;
+    background-color: #1661C3;
+    color: white;
+    font-family: Lato;
+    font-size: 2rem;
+    font-size: 700;
+    border-radius: 2rem;
+}
+
+main .signup-button{
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 10.4rem;
+    width: 40.7rem;
+    height: 4.8rem;
+    background-color: #1661C3;
+    color: white;
+    font-family: Lato;
+    font-size: 2rem;
+    font-size: 700;
+    border-radius: 2rem;
+}
+
+main .red{
+    color: red;
+}
