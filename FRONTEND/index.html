@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>K-Law</title>
+    <link rel="icon" type="image/png" sizes="" href="images/k-icon.png">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <section>
+            <div class="logo-title">
+                <img class="logo" src="images/k-logo.png" alt="logo">
+                <h1>k-law</h1>
+            </div>
+            <div class="main-header">
+                <p>See What's Happening</p>
+                <div class="profile-container">
+                    <div class="profile-icon" onclick="toggleDropdown()"></div>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <div class="profile">
+                            <figure class="profile-icon"></figure>
+                            <p>User</p>
+                        </div>
+                        <a href="html/login.html">
+                            <img src="images/door-left.png" alt="">Logout</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+    </header>
+    <div class="main-container">
+        <nav>
+            <div class="home-container">
+                <img src="images/Home Icon.png" alt="">
+                <p>Home</p>
+            </div>
+            <div class="help-container">
+                <img src="images/Help Icon.png" alt="">
+                <p>Ask Help</p>
+            </div>
+        </nav>
+        <hr>
+        <main>
+            <section class="filter-container">
+                <div class="companies-container">
+                    <button class="companyButton">HYBE</button>
+                    <button class="companyButton">SM</button>
+                    <button class="companyButton">YG</button>
+                    <button class="companyButton">JYP</button>
+                    <button class="companyButton">CUBE</button>
+                </div>
+                <div class="warnings-container">
+                    <button class="violationButton">Wage</button>
+                    <button class="violationButton">Harrasment</button>
+                    <button class="violationButton">Discrimination</button>
+                    <button class="violationButton">Exploitative</button>
+                    <button class="violationButton">Health</button>
+                </div>
+            </section>
+            <section class="post-container">
+                <div class="sort-by">
+                    <p>Sort By</p>
+                    <button>Most Votes
+                        <img src="images/Vector.png" alt="">
+                    </button>
+                </div>
+                <section class="backandpost-container">
+                    <button class="back-button">
+                        <img src="images/Vector.png" alt="">
+                        Back
+                    </button>
+                    <section class="card-container">
+                        <section onclick="myFunction(this)" class="post">
+                            <div class="profile-container">
+                                <figure class="profile-icon"></figure>
+                                <p>Anonymous User</p>
+                                <p>&#x2022</p>
+                                <p>03/21/2024</p>  
+                                <p>&#x2022</p>
+                                <div class="violation-tag">
+                                    <p>Discrimination</p> 
+                                </div>
+                            </div>
+                            <div class="post-header">
+                                <h2>In vehicula rhoncus felis sed congue.</h2> 
+                                <div class="addresed-to">
+                                    <p>Addressed to</p>
+                                    <div class="company-tag">
+                                        <p>HYBE</p> 
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="post-content">Quisque id finibus velit. In hac habitasse platea dictumst. Curabitur tempus quam ut tellus pellentesque accumsan. 
+                                Cras tincidunt augue a nisl aliquet, in luctus velit iaculis. Etiam ac ante diam. Suspendisse eleifend pretium tortor, 
+                                ac ullamcorper enim rhoncus quis. Aliquam eget fringilla orci. Vivamus sit amet tincidunt ligula, a tempus nunc. 
+                                Quisque eget purus blandit, tempor nisl id, lobortis diam. Donec ac leo risus. <span id="dots">...</span> <span id="more"><br><br>erisque enim ligula 
+                                venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum 
+                                nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. 
+                                Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p> 
+                            <div class="bottom-buttons">
+                                <div class="vote-container" onclick="stopProp(event)">
+                                    <button class="upvote" >
+                                        <img src="images/uparrow.png" alt="">
+                                    </button>
+                                    <label id="countLabel">0</label>
+                                    <button class="downvote">
+                                        <img src="images/uparrow.png" alt="" >
+                                    </button>
+                                </div>
+                                <div class="comment-container">
+                                    <img src="images/comment.png" alt="">
+                                    <label id="countLabel">0</label>
+                                </div>
+                            </div>
+                            <div id="more-content">
+                                <form action="">
+                                    <input type="text" placeholder="Add a comment">
+                                    <input type="submit" value="Submit"></form>
+                                </form>
+                                <div class="comment-section">
+    
+                                </div>
+                            </div>
+                        </section>
+
+
+                        <section onclick="myFunction(this)" class="post">
+                            <div class="profile-container">
+                                <figure class="profile-icon"></figure>
+                                <p>Anonymous User</p>
+                                <p>&#x2022</p>
+                                <p>03/21/2024</p>  
+                                <p>&#x2022</p>
+                                <div class="violation-tag">
+                                    <p>Wage</p> 
+                                </div>
+                                <div class="violation-tag">
+                                    <p>Discrimination</p> 
+                                </div>
+                            </div>
+                            <div class="post-header">
+                                <h2>Nulla auctor suscipit eros non interdum.</h2> 
+                                <div class="addresed-to">
+                                    <p>Addressed to</p>
+                                    <div class="company-tag">
+                                        <p>SM</p> 
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="post-content">
+                                Pellentesque congue velit ut sollicitudin efficitur. Integer venenatis eros ut metus interdum ultricies. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed risus arcu, luctus sit amet ipsum vitae, sollicitudin condimentum quam. Cras malesuada finibus sollicitudin. Phasellus arcu purus, dictum id nisl nec, egestas sagittis mauris. Nam lacus nisl, placerat in dictum a, posuere in sem.
+                                <span id="dots">...</span> <span id="more"><br><br>
+                                    Vestibulum laoreet, dolor a tempus tincidunt, libero quam dignissim nisi, sit amet sollicitudin massa est at libero. Nunc scelerisque ex id enim malesuada, nec molestie tortor bibendum. Donec fermentum accumsan lobortis. Proin ultricies turpis a neque interdum, ac rutrum dui dictum. Vivamus vitae aliquet tortor, sed fermentum urna. Nulla facilisi. Sed gravida ligula lacus, varius efficitur ipsum tincidunt at. Donec nec scelerisque est.</span></p> 
+                            <div class="bottom-buttons">
+                                <div class="vote-container" onclick="stopProp(event)">
+                                    <button class="upvote" >
+                                        <img src="images/uparrow.png" alt="">
+                                    </button>
+                                    <label id="countLabel">0</label>
+                                    <button class="downvote">
+                                        <img src="images/uparrow.png" alt="" >
+                                    </button>
+                                </div>
+                                <div class="comment-container">
+                                    <img src="images/comment.png" alt="">
+                                    <label id="countLabel">0</label>
+                                </div>
+                            </div>
+                            <div id="more-content">
+                                <form action="">
+                                    <input type="text" placeholder="Add a comment">
+                                    <input type="submit" value="Submit"></form>
+                                </form>
+                                <div class="comment-section">
+    
+                                </div>
+                            </div>
+                        </section>
+
+
+
+                        <section onclick="myFunction(this)" class="post">
+                            <div class="profile-container">
+                                <figure class="profile-icon"></figure>
+                                <p>Anonymous User</p>
+                                <p>&#x2022</p>
+                                <p>03/21/2024</p>  
+                                <p>&#x2022</p>
+                                <div class="violation-tag">
+                                    <p>Discrimination</p> 
+                                </div>
+                            </div>
+                            <div class="post-header">
+                                <h2>Vivamus scelerisque at justo eget dictum.</h2> 
+                                <div class="addresed-to">
+                                    <p>Addressed to</p>
+                                    <div class="company-tag">
+                                        <p>HYBE</p> 
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="post-content">
+                                Duis tempus nisl quam, a laoreet purus aliquet eget. Donec luctus neque ac tellus pretium, vulputate mattis enim ornare. Vestibulum in elit ut nulla lobortis interdum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi facilisis imperdiet vestibulum. Donec non ex vel nulla pharetra blandit. Nulla facilisi. Aliquam a feugiat arcu, at varius leo. Pellentesque vel dolor neque. Maecenas dui dui, tempor nec magna at, vulputate aliquam purus. Nunc eleifend, ligula sed scelerisque lobortis, purus ex imperdiet urna, vitae volutpat libero ante at erat. Sed egestas nibh non finibus porta.
+                                <span id="dots">...</span> <span id="more"><br><br>
+                                    Vestibulum laoreet, dolor a tempus tincidunt, libero quam dignissim nisi, sit amet sollicitudin massa est at libero. Nunc scelerisque ex id enim malesuada, nec molestie tortor bibendum. Donec fermentum accumsan lobortis. Proin ultricies turpis a neque interdum, ac rutrum dui dictum. Vivamus vitae aliquet tortor, sed fermentum urna. Nulla facilisi. Sed gravida ligula lacus, varius efficitur ipsum tincidunt at. Donec nec scelerisque est.</span></p> 
+                            <div class="bottom-buttons">
+                                <div class="vote-container" onclick="stopProp(event)">
+                                    <button class="upvote" >
+                                        <img src="images/uparrow.png" alt="">
+                                    </button>
+                                    <label id="countLabel">0</label>
+                                    <button class="downvote">
+                                        <img src="images/uparrow.png" alt="" >
+                                    </button>
+                                </div>
+                                <div class="comment-container">
+                                    <img src="images/comment.png" alt="">
+                                    <label id="countLabel">0</label>
+                                </div>
+                            </div>
+                            <div id="more-content">
+                                <form action="">
+                                    <input type="text" placeholder="Add a comment">
+                                    <input type="submit" value="Submit"></form>
+                                </form>
+                                <div class="comment-section">
+    
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section onclick="myFunction(this)" class="post">
+                            <div class="profile-container">
+                                <figure class="profile-icon"></figure>
+                                <p>Anonymous User</p>
+                                <p>&#x2022</p>
+                                <p>03/21/2024</p>  
+                                <p>&#x2022</p>
+                                <div class="violation-tag">
+                                    <p>Harrasment</p> 
+                                </div>
+                                <div class="violation-tag">
+                                    <p>Health</p> 
+                                </div>
+                            </div>
+                            <div class="post-header">
+                                <h2>Maecenas vitae diam placerat.</h2> 
+                                <div class="addresed-to">
+                                    <p>Addressed to</p>
+                                    <div class="company-tag">
+                                        <p>JYP</p> 
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="post-content">Quisque id finibus velit. In hac habitasse platea dictumst. Curabitur tempus quam ut tellus pellentesque accumsan. 
+                                Cras tincidunt augue a nisl aliquet, in luctus velit iaculis. Etiam ac ante diam. Suspendisse eleifend pretium tortor, 
+                                ac ullamcorper enim rhoncus quis. Aliquam eget fringilla orci. Vivamus sit amet tincidunt ligula, a tempus nunc. 
+                                Quisque eget purus blandit, tempor nisl id, lobortis diam. Donec ac leo risus. <span id="dots">...</span> <span id="more"><br><br>erisque enim ligula 
+                                venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum 
+                                nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. 
+                                Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p> 
+                            <div class="bottom-buttons">
+                                <div class="vote-container" onclick="stopProp(event)">
+                                    <button class="upvote" >
+                                        <img src="images/uparrow.png" alt="">
+                                    </button>
+                                    <label id="countLabel">0</label>
+                                    <button class="downvote">
+                                        <img src="images/uparrow.png" alt="" >
+                                    </button>
+                                </div>
+                                <div class="comment-container">
+                                    <img src="images/comment.png" alt="">
+                                    <label id="countLabel">0</label>
+                                </div>
+                            </div>
+                            <div id="more-content">
+                                <form action="">
+                                    <input type="text" placeholder="Add a comment">
+                                    <input type="submit" value="Submit"></form>
+                                </form>
+                                <div class="comment-section">
+    
+                                </div>
+                            </div>
+                        </section>
+
+                        <section onclick="myFunction(this)" class="post">
+                            <div class="profile-container">
+                                <figure class="profile-icon"></figure>
+                                <p>Anonymous User</p>
+                                <p>&#x2022</p>
+                                <p>03/21/2024</p>  
+                                <p>&#x2022</p>
+                                <div class="violation-tag">
+                                    <p>Wage</p> 
+                                </div>
+                                <div class="violation-tag">
+                                    <p>Health</p> 
+                                </div>
+                            </div>
+                            <div class="post-header">
+                                <h2>In vehicula rhoncus felis sed congue.</h2> 
+                                <div class="addresed-to">
+                                    <p>Addressed to</p>
+                                    <div class="company-tag">
+                                        <p>CUBE</p> 
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="post-content">Quisque id finibus velit. In hac habitasse platea dictumst. Curabitur tempus quam ut tellus pellentesque accumsan. 
+                                Cras tincidunt augue a nisl aliquet, in luctus velit iaculis. Etiam ac ante diam. Suspendisse eleifend pretium tortor, 
+                                ac ullamcorper enim rhoncus quis. Aliquam eget fringilla orci. Vivamus sit amet tincidunt ligula, a tempus nunc. 
+                                Quisque eget purus blandit, tempor nisl id, lobortis diam. Donec ac leo risus. <span id="dots">...</span> <span id="more"><br><br>erisque enim ligula 
+                                venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum 
+                                nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. 
+                                Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p> 
+                            <div class="bottom-buttons">
+                                <div class="vote-container" onclick="stopProp(event)">
+                                    <button class="upvote" >
+                                        <img src="images/uparrow.png" alt="">
+                                    </button>
+                                    <label id="countLabel">0</label>
+                                    <button class="downvote">
+                                        <img src="images/uparrow.png" alt="" >
+                                    </button>
+                                </div>
+                                <div class="comment-container">
+                                    <img src="images/comment.png" alt="">
+                                    <label id="countLabel">0</label>
+                                </div>
+                            </div>
+                            <div id="more-content">
+                                <form action="">
+                                    <input type="text" placeholder="Add a comment">
+                                    <input type="submit" value="Submit"></form>
+                                </form>
+                                <div class="comment-section">
+    
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+            </section>
+        </main>
+    </div>
+    <script src="js/toggle.js"></script>
+    <script src="js/readmore.js"></script>
+    <script src="js/handlefiltering.js"></script>
+    <script src="js/clickpost.js"></script>
+    <script src="js/dropdown.js"></script>
+</body>
+</html>
