@@ -12,9 +12,15 @@ import (
 
 func SetupRouter(db *gorm.DB) *gin.Engine {
 	r := gin.Default()
+	//r.Use(cors.Default())
 
-	r.Use(func(ctx *gin.Context) {
-		ctx.Set("db", db)
+	r.Use(func(c *gin.Context) {
+		c.Set("db", db)
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT")
+		c.Next()
 	})
 
 	r.POST("/register", controller.Register)

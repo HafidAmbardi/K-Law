@@ -54,6 +54,7 @@ func Login(c *gin.Context) {
 	if err != nil {
 		fmt.Println("error")
 		c.JSON(http.StatusBadRequest, gin.H{"error": "user atau password salah"})
+		return
 	}
 
 	user := map[string]string{

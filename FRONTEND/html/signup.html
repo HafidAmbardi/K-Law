@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>K-Law</title>
-    <link rel="icon" type="image/png" href="../images/k-logo.png">
+    <link rel="icon" type="image/png" href="../images/k-icon.png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
         <section>
             <h1>Sign Up</h1>
             <hr>
-            <form action="login.php" method="post">
+            <form action="login.php" method="post" id="form_signup">
                 <div class="form-container">
                     <label for="username">Username <span class="red">*</span></label>
                     <input type="text" name="username" id="username" required>
@@ -32,6 +32,10 @@
                 <div class="form-container">
                     <label for="email">Email <span class="red">*</span></label>
                     <input type="email" name="email" id="email" required>
+                </div>
+                <div class="form-container">
+                    <label for="age">Age <span class="red">*</span></label>
+                    <input type="number" name="age" id="age" required>
                 </div>
                 <div class="form-container">
                     <label for="password">Password <span class="red">*</span></label>
@@ -48,5 +52,7 @@
 
         </section>
     </main>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script src="../js/signup.js"></script>
 </body>
 </html>
