@@ -27,6 +27,7 @@ func main() {
 			log.Fatal("Error loading .env file")
 		}
 	}
+
 	docs.SwaggerInfo.Title = "Swagger K-law"
 	docs.SwaggerInfo.Description = "This is a k-law server."
 	docs.SwaggerInfo.Version = "1.0"

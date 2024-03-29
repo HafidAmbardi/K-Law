@@ -24,7 +24,7 @@
         <section>
             <h1>Log In</h1>
             <hr>
-            <form action="login.php" method="post">
+            <form action="http://localhost:8080/login" method="post" id="form_login">
                 <div class="form-container">
                     <label for="username">Username <span class="red">*</span></label>
                     <input type="text" name="username" id="username" required>
@@ -41,5 +41,7 @@
 
         </section>
     </main>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 </html>
