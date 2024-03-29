@@ -2,7 +2,6 @@ package controller
 
 import (
 	"OTI-inbound/models"
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -19,6 +18,7 @@ type RegisterInput struct {
 	Username string `json:"username" binding:"required"`
 	Password string `json:"password" binding:"required"`
 	Email    string `json:"email" binding:"required"`
+	Age      int    `json : "age"`
 }
 
 type PasswordUpdateInput struct {
@@ -52,7 +52,6 @@ func Login(c *gin.Context) {
 	email, err := models.LoginCheck(u.Username, u.Password, db)
 
 	if err != nil {
-		fmt.Println("error")
 		c.JSON(http.StatusBadRequest, gin.H{"error": "user atau password salah"})
 		return
 	}
@@ -82,11 +81,17 @@ func Register(c *gin.Context) {
 		return
 	}
 
+	if input.Age < 18 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "nda cukup umur dek"})
+		return
+	}
+
 	u := models.User{}
 
 	u.Username = input.Username
 	u.Email = input.Email
 	u.Password = input.Password
+	u.Age = input.Age
 
 	_, err := u.SaveUser(db)
 

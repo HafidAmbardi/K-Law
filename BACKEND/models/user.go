@@ -14,7 +14,7 @@ type User struct {
 	Username  string    `json:"username"`
 	Email     string    `json:"email"`
 	Password  string    `json:"password"`
-	Age       uint      `json:"age"`
+	Age       int       `json:"age"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
 	Post      []Post    `json:"-"`

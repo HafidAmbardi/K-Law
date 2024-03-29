@@ -8,10 +8,15 @@ const form_signup = document.getElementById("form_signup");
             console.error("Password berbeda")
             return
         }
+        let age = document.getElementById("age").value;
+        if (age < 18){
+            console.error("ndak cukup umur bang")
+        }
         const object_signup = {
             username : document.getElementById("username").value,
             password : document.getElementById("password").value,
-            email : document.getElementById("email").value
+            email : document.getElementById("email").value,
+            age  : parseInt(document.getElementById("age").value)
         }
         $.ajax({
             url:"http://localhost:8080/register",

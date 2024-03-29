@@ -24,6 +24,8 @@ definitions:
     type: object
   controller.RegisterInput:
     properties:
+      age:
+        type: integer
       email:
         type: string
       password:

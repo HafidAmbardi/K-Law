@@ -816,6 +816,9 @@ const docTemplate = `{
                 "username"
             ],
             "properties": {
+                "age": {
+                    "type": "integer"
+                },
                 "email": {
                     "type": "string"
                 },
