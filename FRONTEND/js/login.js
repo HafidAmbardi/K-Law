@@ -12,7 +12,6 @@ const form_login = document.getElementById("form_login");
             data : JSON.stringify(object_login),
             success : function(response){
                 console.log(response)
-                window.location.href= '../index.html'; 
             },
             error : function(response){
                 console.error(response)
