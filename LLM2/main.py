@@ -18,8 +18,8 @@ model = "gpt-4-1106-preview"  # "gpt-3.5-turbo-16k"
 
 
 # == Hardcoded ids to be used once the first code run is done and the assistant was created
-thread_id = "thread_9OoWWGjU9WxAwT5KjSJyy42w"
-assis_id = "asst_3qBgFUBM0wOERkyOeADjJJp7"
+thread_id = "thread_RckR1VmNx9sA2rcXwJUTmNzd"
+assis_id = "asst_U3uBwxTs72egKGmbVxuF92vi"
 
 # Initialize all the session
 if "file_id_list" not in st.session_state:
@@ -69,17 +69,12 @@ if st.session_state.file_id_list:
 
 # Button to initiate the chat session
 if st.sidebar.button("Start Chatting..."):
-    if st.session_state.file_id_list:
-        st.session_state.start_chat = True
+    st.session_state.start_chat = True
 
-        # Create a new thread for this chat session
-        chat_thread = client.beta.threads.create()
-        st.session_state.thread_id = chat_thread.id
-        st.write("Thread ID:", chat_thread.id)
-    else:
-        st.sidebar.warning(
-            "No files found. Please upload at least one file to get started."
-        )
+    # Create a new thread for this chat session
+    chat_thread = client.beta.threads.create()
+    st.session_state.thread_id = chat_thread.id
+    st.write("Thread ID:", chat_thread.id)
 
 # the main interface ...
 st.title("K-Law")
@@ -114,8 +109,11 @@ if st.session_state.start_chat:
         run = client.beta.threads.runs.create(
             thread_id=st.session_state.thread_id,
             assistant_id=assis_id,
-            instructions="""Please answer the questions using the knowledge provided in the files.
-            when adding additional information, make sure to distinguish it with bold or underlined text.""",
+            instructions="""You are playing the role of a Korean Labor Law Expert.  A user will provide a written description of a workplace situation.  Based on this description, do your best to:
+1. Summarize the key points of the scenario.
+2. Analyze the scenario to identify potential violations of Korean Labor Law.
+3. If a violation is found, retrieve the PDF data from your custom knowledge base to pinpoint the relevant Korean Labor Law acts, chapters, sections, and articles.
+4. Recommend potential next steps for the user, emphasizing that they should consult with a qualified lawyer for specific legal advice.""",
         )
 
         # Show a spinner while the assistant is thinking...

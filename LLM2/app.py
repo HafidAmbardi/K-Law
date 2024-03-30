@@ -39,8 +39,8 @@ file_object = client.files.create(file=open(filepath, "rb"), purpose="assistants
 # print(assis_id)
 
 # # == Hardcoded ids to be used once the first code run is done and the assistant was created
-thread_id = "thread_9OoWWGjU9WxAwT5KjSJyy42w"
-assis_id = "asst_3qBgFUBM0wOERkyOeADjJJp7"
+thread_id = "thread_RckR1VmNx9sA2rcXwJUTmNzd"
+assis_id = "asst_U3uBwxTs72egKGmbVxuF92vi"
 
 # == Step 3. Create a Thread
 message = "What are Labor Laws in Korea?"
